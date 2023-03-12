@@ -1,12 +1,10 @@
- <main class="flex-row justify-space-between">    
-    <div class="col-12 col-md-4">
-      <div class="card">
-        {{#if signUp}}
-        {{> signup-form}}
-        {{else}}
-        {{> login-form}}
-        {{/if}}
-      </div>
-    </div>
-    <div class="col-12 col-md-8"></div>
-</main>
+<div class="col-12 col-md-4">
+  <div class="card">
+    {{#if signUp}}
+    {{> signup-form}}
+    {{else}}
+    {{> login-form}}
+    {{/if}}
+  </div>
+</div>
+<div class="col-12 col-md-8"></div>

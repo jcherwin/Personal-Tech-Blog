@@ -35,7 +35,7 @@ h6 {
 
 main {
   margin: 20px auto;
-  width: 94%;
+  width: 92%;
 }
 
 p {
@@ -98,15 +98,11 @@ p {
   color: var(--primary);
 }
 
-.hero p {
-  max-width: 75%;
-}
-
 nav {
   display: flex;
   justify-content: space-between;
   padding-bottom: 20px;
-  width: 400px;
+  width: 330px;
 }
 
 nav a{
