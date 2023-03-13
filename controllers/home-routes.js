@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
-//const withAuth = require('../utils/auth');
+const withAuth = require('../utils/auth');
 
 
 router.get('/', async (req, res) => {
@@ -9,14 +9,13 @@ router.get('/', async (req, res) => {
         const postData = await Post.findAll({ 
             include: 
             [
-                { model: User, attributes: { exclude: ['password'] } },
-                { model: Comment, include: { model: User } }
+                { model: User, attributes: { exclude: ['password'] } }
             ]
         });
       
         const posts = postData.map((post) => post.get({ plain: true }));
 
-        console.log(posts);
+        //console.log(posts);
 
         res.render('home', {
             posts,
@@ -29,7 +28,36 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/dashboard', async (req, res) => {
+router.get('/post/:id', async (req, res) => {
+    try
+    {
+        const postData = await Post.findAll({
+            where: {
+                id: req.params.id
+            },
+            include: 
+            [
+                { model: User, attributes: { exclude: ['password'] } },
+                { model: Comment, include: { model: User } }
+            ]
+        });
+      
+        const post = postData.map((post) => post.get({ plain: true }));
+
+        //console.log(post);
+
+        res.render('post', {
+            post,
+            loggedIn: req.session.loggedIn
+        });
+    }
+    catch (err)
+    {
+        res.status(500).json(err);
+    }
+});
+
+router.get('/dashboard', withAuth, async (req, res) => {
     try
     {
         const postData = await Post.findAll({
@@ -42,10 +70,13 @@ router.get('/dashboard', async (req, res) => {
 
         console.log(posts);
 
+        //console.log("User ID is:");
+        //console.log(req.session.userId);
+
         res.render('dashboard', {
             posts,
             loggedIn: req.session.loggedIn,
-            dashboard: true
+            name: req.session.username
         });
     }
     catch (err)
@@ -59,7 +90,7 @@ router.get(['/login','/signup'], (req, res) => {
     else{signup = false}
 
     if (req.session.loggedIn) {
-        res.redirect('/');
+        res.redirect('/dashboard');
         return;
     }
     res.render('login', {

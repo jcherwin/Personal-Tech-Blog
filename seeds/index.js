@@ -19,8 +19,8 @@ const seedAll = async () => {
   
   console.log('\n----- SELECTED TABLES SYNCED -----\n');
 
-  await seedPosts();
-  console.log('\n----- POSTS SEEDED -----\n');
+  //await seedPosts();
+  //console.log('\n----- POSTS SEEDED -----\n');
 
   await seedComments();
   console.log('\n----- COMMENTS SEEDED -----\n');

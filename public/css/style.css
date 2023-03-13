@@ -170,11 +170,25 @@ nav a{
   width: 100%;
 }
 
+.card-edit {
+  margin: 0 0 20px 0;
+  border: 3px solid var(--dark);
+  border-radius: 14px;
+  width: 100%;
+}
+
 .card-header {
   color: var(--primary);
   background-color: var(--dark);
   padding: 2.5%;
   border-radius: calc(.18rem - 1px) calc(.18rem - 1px) 0 0;
+}
+
+.card-header-edit {
+  color: var(--primary);
+  background-color: var(--dark);
+  padding: 1%;
+  border-radius: 8px;
 }
 
 .card-title {
@@ -183,12 +197,20 @@ nav a{
   cursor: pointer;
 }
 
+.card-link{
+  text-decoration: none;
+}
+
 .card-content{
   margin: 0;
 }
 
 .card-body {
   padding: 2.5%;
+}
+
+.comment-card{
+  width: 75%;
 }
 
 /* FORM */

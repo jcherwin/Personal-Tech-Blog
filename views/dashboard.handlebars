@@ -1,5 +1,5 @@
-{{#if loggedIn}}
-<h1>Welcome to the Dashboard</h1>
-{{else}}
-<h1>You must LOGIN to view this page</h1>
-{{/if}}
+{{#each posts}}
+<div class="container">
+    {{> post-details-edit}}
+</div>
+{{/each}}

@@ -1,0 +1,10 @@
+{{#each post}}
+<div class="container">
+    {{> post-details}}
+    {{#if comments}}
+    {{#each comments}}
+    {{> comment-details}}
+    {{/each}}
+    {{/if}}
+</div>
+{{/each}}

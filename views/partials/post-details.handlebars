@@ -1,0 +1,11 @@
+<div class="card">
+    <div class="card-header flex-row justify-space-between">
+        <a href="/post/{{id}}" class="card-link">
+            <h2 class="card-title">{{title}}</h2>
+        </a>
+        <p class="card-content">Posted by {{user.name}} on {{format_date createdAt}}</p>
+    </div>        
+    <div class="card-body">
+        <p class="card-content">{{body}}</p>
+    </div>
+</div>
