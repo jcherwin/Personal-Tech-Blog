@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { User } = require('../../models');
 
 // CREATE new user
-// eslint-disable-next-line no-use-before-define
 router.post('/', async (req, res) => {
   try {
     const dbUserData = await User.create({
@@ -30,6 +29,9 @@ router.post('/login', async (req, res) => {
       },
     });
 
+    //console.log("User ID is:");
+    //console.log(dbUserData.id);
+
     if (!dbUserData) {
       res
         .status(400)
@@ -48,6 +50,7 @@ router.post('/login', async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.userId = dbUserData.id;
 
       res
         .status(200)

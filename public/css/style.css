@@ -125,6 +125,10 @@ nav a{
   box-shadow: 6px 5px var(--light-dark);
 }
 
+.container{
+  width: 100%;
+}
+
 .list-group {
   padding: 0;
   list-style: none;
@@ -163,6 +167,7 @@ nav a{
   margin: 0 0 20px 0;
   border: 3px solid var(--dark);
   border-radius: var(--border-radius);
+  width: 100%;
 }
 
 .card-header {
@@ -170,6 +175,16 @@ nav a{
   background-color: var(--dark);
   padding: 2.5%;
   border-radius: calc(.18rem - 1px) calc(.18rem - 1px) 0 0;
+}
+
+.card-title {
+  color: var(--primary);
+  background-color: var(--dark);
+  cursor: pointer;
+}
+
+.card-content{
+  margin: 0;
 }
 
 .card-body {

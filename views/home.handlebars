@@ -1,5 +1,24 @@
-{{#if loggedIn}}
-<h1>Welcome to the Homepage</h1>
-{{else}}
-<h1>You must LOGIN to view this page</h1>
-{{/if}}
+{{#each posts as |post|}}
+    <div class="container">
+        <div class="card">
+            <div class="card-header flex-row justify-space-between">
+                <h2 class="card-title">{{post.title}}</h2>
+                <p class="card-content">Posted by {{post.user.name}} on {{format_date post.createdAt}}</p>
+            </div>        
+            <div class="card-body">
+                <p class="card-content">{{post.body}}</p>
+            </div>
+        </div>
+        {{#if comments}}
+        {{#each comments as |comment|}}
+        <div class="card">
+            <div class="card-header flex-row justify-space-between"> </div>        
+            <div class="card-body">
+                <p class="card-content">{{comment.body}}</p>
+                <p class="card-content">-{{comment.user.name}}, {{format_date comment.createdAt}}</p>
+            </div>
+        </div>
+        {{/each}}
+        {{/if}}
+    </div>
+{{/each}}
