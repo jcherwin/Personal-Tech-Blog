@@ -4,6 +4,25 @@ const { User } = require('../../models');
 // CREATE new user
 router.post('/', async (req, res) => {
   try {
+    const dbUserData = await User.findOne({
+      where: {
+        name: req.body.username,
+      },
+    });
+
+    if (dbUserData) {
+      res
+        .status(400)
+        .json({ message: 'User with this name already exists.\nPlease try again!' });
+      return;
+    }
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+
+  try {
     const dbUserData = await User.create({
       name: req.body.username,
       password: req.body.password,
@@ -37,7 +56,7 @@ router.post('/login', async (req, res) => {
     if (!dbUserData) {
       res
         .status(400)
-        .json({ message: 'Incorrect username or password. Please try again!' });
+        .json({ message: 'Incorrect username. Please try again!' });
       return;
     }
 
@@ -46,7 +65,7 @@ router.post('/login', async (req, res) => {
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: 'Incorrect username or password. Please try again!' });
+        .json({ message: 'Incorrect password. Please try again!' });
       return;
     }
 
