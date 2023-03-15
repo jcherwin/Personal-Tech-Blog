@@ -36,10 +36,18 @@
     {{{ body }}}
   </main>
 
-  <script src="/js/homepage.js"></script>
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>  
   {{/if}}
+  {{#if page_dashboard}}
+  <script src="/js/post.js"></script>
+  {{/if}}
+  {{#if page_post}}
+  {{#if loggedIn}}
+  <script src="/js/comment.js"></script>
+  {{/if}}
+  {{/if}}
+
 </body>
 
 </html>

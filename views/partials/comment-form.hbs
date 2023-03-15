@@ -1,0 +1,14 @@
+<div class="card comment-form hidden">
+    <h3 class="card-header text-uppercase">Create New Post</h3>
+    <form class="form card-body">
+        <label for="comment-body">Comment</label>
+        <textarea class="form-input" id="comment-body" autofocus="true"></textarea>
+        <button
+        id="submit-comment"
+        class="btn btn-primary"
+        type="submit"
+        data-postid="{{id}}"
+        data-userid="{{user_id}}">
+        Submit</button>
+    </form>
+</div>

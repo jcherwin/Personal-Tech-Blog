@@ -44,11 +44,14 @@ router.get('/post/:id', async (req, res) => {
       
         const post = postData.map((post) => post.get({ plain: true }));
 
-        //console.log(post);
+        console.log(post);
+        console.log(req.session.user_id);
 
         res.render('post', {
             post,
-            loggedIn: req.session.loggedIn
+            loggedIn: req.session.loggedIn,
+            currentUserId: req.session.user_id,
+            page_post: true
         });
     }
     catch (err)
@@ -62,7 +65,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     {
         const postData = await Post.findAll({
             where: {
-                user_id: req.session.userId
+                user_id: req.session.user_id
             }            
         });
       
@@ -76,7 +79,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
         res.render('dashboard', {
             posts,
             loggedIn: req.session.loggedIn,
-            name: req.session.username
+            name: req.session.username,
+            page_dashboard: true
         });
     }
     catch (err)

@@ -2,9 +2,17 @@
 <div class="container">
     {{> post-details}}
     {{#if comments}}
+    <div class="comment-container">
     {{#each comments}}
     {{> comment-details}}
     {{/each}}
+    </div>
     {{/if}}
 </div>
+{{> comment-form user_id=../currentUserId}}
+{{#if loggedIn}}
+<div class="footer">
+    <button data-postid="{{id}}" class="btn" id="footer-btn"> + Add Comment </button>
+</div>
+{{/if}}
 {{/each}}

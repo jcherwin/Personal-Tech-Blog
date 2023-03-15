@@ -1,5 +1,9 @@
 {{#each posts}}
 <div class="container">
-    {{> post-details-edit}}
+    {{> post-details-dashboard}}
 </div>
+{{> post-form user_id=../currentUserId}}
 {{/each}}
+<div class="footer">
+    <button data-language="" class="btn" id="footer-btn"> + Add Post </button>
+</div>
