@@ -1,6 +1,20 @@
+{{#if edit}}
+<div class="card edit-form-card hidden">
+{{else}}
 <div class="card form-card hidden">
+{{/if}}
     <h3 class="card-header text-uppercase">{{title}} Post</h3>
     <form class="form card-body">
+    {{#if edit}}
+        <label for="edit-post-title">Title</label>
+        <input class="form-input" type="text" id="edit-post-title" autofocus="true" />
+        <label for="edit-post-body">Content</label>
+        <textarea class="form-input" id="edit-post-body"></textarea>
+        <button id="update-form" class="btn btn-primary" type="submit">
+        Update</button>
+        <button id="delete-form" class="btn btn-primary">
+        Delete</button>
+    {{else}}
         <label for="post-title">Title</label>
         <input class="form-input" type="text" id="post-title" autofocus="true" />
         <label for="post-body">Content</label>
@@ -8,17 +22,7 @@
         <button
         id="submit-form" class="btn btn-primary"
         type="submit" data-userid="{{user_id}}">
-        {{#if edit}}
-        Update Post
-        {{else}}
-        Create
-        {{/if}}
-        </button>
-        {{#if edit}}
-        <button
-        id="delete-form" class="btn btn-primary"
-        type="" data-postid="{{id}}">
-        Delete</button>
-        {{/if}}
+        Create</button>
+    {{/if}}
     </form>
 </div>

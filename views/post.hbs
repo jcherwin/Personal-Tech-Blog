@@ -8,13 +8,14 @@
 {{#if comments}}
 <div class="comment-container">
     {{#each comments}}
-    {{> comment-details}}
+    {{> comment-details current_user=../../currentUserId}}
     {{/each}}
 </div>
 {{/if}}
 </div>
 
-{{> comment-form user_id=../currentUserId}}
+{{> comment-form user_id=../currentUserId title="Create New"}}
+{{> comment-form user_id=../currentUserId title="Edit" edit=true}}
 
 {{#if ../loggedIn}}
 <div class="footer">

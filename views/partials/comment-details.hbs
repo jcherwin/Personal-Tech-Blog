@@ -1,7 +1,15 @@
 <div class="card comment-card" data-commentid="{{id}}">
-    <div class="card-header flex-row justify-space-between"> </div>        
+    <div class="card-header flex-row justify-space-between">
+        <p class="card-content">#{{id}}</p>
+        <p class="card-content">{{format_date createdAt}}</p>
+    </div>
+    {{#ifEquals current_user user_id}}
+    <div class="card-subheader flex-row justify-flex-end">
+        <p class="card-content edit-comment">edit</p>
+    </div>
+    {{/ifEquals}}      
     <div class="card-body">
-        <p class="card-content">{{body}}</p>
-        <p class="card-content">-{{user.name}}, {{format_date createdAt}}</p>
+        <p class="card-content comment-body">{{body}}</p>
+        <p class="card-content">-{{user.name}}</p>
     </div>
 </div>

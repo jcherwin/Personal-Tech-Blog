@@ -44,8 +44,8 @@ router.get('/post/:id', async (req, res) => {
       
         const post = postData.map((post) => post.get({ plain: true }));
 
-        console.log(post);
-        console.log(req.session.user_id);
+        console.log(post[0]);
+        //console.log(req.session.user_id);
 
         res.render('post', {
             post,

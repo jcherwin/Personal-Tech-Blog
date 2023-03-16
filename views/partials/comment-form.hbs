@@ -1,6 +1,18 @@
+{{#if edit}}
+<div class="card edit-form-card hidden">
+{{else}}
 <div class="card form-card hidden">
-    <h3 class="card-header text-uppercase">Create New Post</h3>
+{{/if}}
+    <h3 class="card-header text-uppercase">{{title}} Comment</h3>
     <form class="form card-body">
+    {{#if edit}}        
+        <label for="edit-comment-body">Comment</label>
+        <textarea class="form-input" id="edit-comment-body" autofocus="true"></textarea>
+        <button id="update-form" class="btn btn-primary" type="submit">
+        Update</button>
+        <button id="delete-form" class="btn btn-primary">
+        Delete</button>
+    {{else}}
         <label for="comment-body">Comment</label>
         <textarea class="form-input" id="comment-body" autofocus="true"></textarea>
         <button
@@ -10,5 +22,6 @@
         data-postid="{{id}}"
         data-userid="{{user_id}}">
         Submit</button>
+    {{/if}}
     </form>
 </div>

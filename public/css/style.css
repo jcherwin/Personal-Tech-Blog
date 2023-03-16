@@ -202,7 +202,13 @@ nav a{
   color: var(--primary);
   background-color: var(--dark);
   padding: 2.5%;
-  border-radius: calc(.18rem - 1px) calc(.18rem - 1px) 0 0;
+  /*border-radius: calc(.18rem - 1px) calc(.18rem - 1px) 0 0;*/
+}
+
+.card-subheader {
+  color: var(--primary);
+  background-color: var(--dark);
+  padding: 0 2.5% 1% 2.5%;
 }
 
 .card-header-edit {
@@ -212,9 +218,8 @@ nav a{
   border-radius: 8px;
 }
 
-.card-title {
+.card-title, .edit-comment {
   color: var(--primary);
-  background-color: var(--dark);
   cursor: pointer;
 }
 
