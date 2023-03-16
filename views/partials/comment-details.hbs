@@ -1,7 +1,7 @@
 <div class="card comment-card" data-commentid="{{id}}">
     <div class="card-header flex-row justify-space-between">
         <p class="card-content">#{{id}}</p>
-        <p class="card-content">{{format_date createdAt}}</p>
+        <p class="card-content">{{format_date updatedAt}}</p>
     </div>
     {{#ifEquals current_user user_id}}
     <div class="card-subheader flex-row justify-flex-end">

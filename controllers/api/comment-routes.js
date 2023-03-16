@@ -18,4 +18,37 @@ router.post('/', async (req, res) => {
   }
 });
 
+//UPDATE one comment
+router.put('/:id', async (req, res) => {
+    try {
+        const commentData = await Comment.update(
+        {
+            body: req.body.body,
+        },
+        {
+            where: { id: req.params.id },
+        });
+
+        res.status(200).json(commentData);
+        
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+//DELETE route for a comment with a matching id
+router.delete('/:id', async (req, res) => {   
+    try {
+        const commentData = await Comment.destroy({
+            where: { id: req.params.id }
+        });
+        res.status(200).json(commentData);
+    } catch (error) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+
 module.exports = router;

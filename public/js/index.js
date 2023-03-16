@@ -181,7 +181,9 @@ const showFormEvent = () => {
 function init() {
     if (document.title === DASHBOARD_PAGETITLE || 
     document.title === POST_PAGETITLE) {
-        showFormEvent();
+        let loggedIn = document.querySelector("#footer-btn");
+        if(loggedIn)
+        { showFormEvent() }
         submitFormEvent();
     }
 }
