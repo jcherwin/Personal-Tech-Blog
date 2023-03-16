@@ -79,7 +79,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
         res.render('dashboard', {
             posts,
             loggedIn: req.session.loggedIn,
-            name: req.session.username,
+            currentUserName: req.session.username,
+            currentUserId: req.session.user_id,
             page_dashboard: true
         });
     }

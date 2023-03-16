@@ -1,18 +1,27 @@
 {{#each post}}
+
 <div class="container">
     {{> post-details}}
-    {{#if comments}}
-    <div class="comment-container">
+</div>
+
+{{#if comments}}
+<div class="comment-container toggle-container">
     {{#each comments}}
     {{> comment-details}}
     {{/each}}
-    </div>
-    {{/if}}
 </div>
+{{/if}}
+
 {{> comment-form user_id=../currentUserId}}
-{{#if loggedIn}}
+
+{{#if ../loggedIn}}
 <div class="footer">
     <button data-postid="{{id}}" class="btn" id="footer-btn"> + Add Comment </button>
 </div>
 {{/if}}
+
 {{/each}}
+
+<script>
+    document.title = "Tech Blog - Post";
+</script>

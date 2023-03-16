@@ -125,10 +125,6 @@ nav a{
   box-shadow: 6px 5px var(--light-dark);
 }
 
-.container{
-  width: 100%;
-}
-
 .list-group {
   padding: 0;
   list-style: none;
@@ -183,6 +179,14 @@ nav a{
   cursor: not-allowed;
 }
 
+.container{
+  width: 100%;
+}
+
+.comment-container{
+  width: 100%;
+}
+
 /* CARDS */
 .card {
   margin: 0 0 20px 0;
@@ -228,10 +232,6 @@ nav a{
 
 .card-body {
   padding: 2.5%;
-}
-
-.comment-card{
-  width: 75%;
 }
 
 /* FORM */
@@ -568,6 +568,10 @@ nav a{
 
   .col-xl-12 {
     flex: 0 0 100%;
+  }
+
+  .comment-container{
+    width: 40%;
   }
 }
 

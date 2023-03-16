@@ -24,8 +24,8 @@
     </nav>
     
     <h1 class="app-title">
-      {{#if name}}
-      {{name}}'s Dashboard
+      {{#if page_dashboard}}
+      {{currentUserName}}'s Dashboard
       {{else}}
       Tech Blog
       {{/if}}
@@ -39,14 +39,7 @@
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>  
   {{/if}}
-  {{#if page_dashboard}}
-  <script src="/js/post.js"></script>
-  {{/if}}
-  {{#if page_post}}
-  {{#if loggedIn}}
-  <script src="/js/comment.js"></script>
-  {{/if}}
-  {{/if}}
+  <script src="/js/index.js"></script>
 
 </body>
 

@@ -1,9 +1,13 @@
-{{#each posts}}
-<div class="container">
+<div class="container toggle-container">
+    {{#each posts}}
     {{> post-details-dashboard}}
+    {{/each}}
 </div>
-{{> post-form user_id=../currentUserId}}
-{{/each}}
+{{> post-form user_id=currentUserId}}
 <div class="footer">
-    <button data-language="" class="btn" id="footer-btn"> + Add Post </button>
+    <button class="btn" id="footer-btn"> + Add Post </button>
 </div>
+
+<script>
+    document.title = "Tech Blog - Dashboard";
+</script>
