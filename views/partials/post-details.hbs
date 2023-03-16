@@ -1,3 +1,11 @@
+{{#if dashboard}}
+<div class="card-edit" data-postid="{{id}}">
+    <div class="card-header-edit flex-row justify-space-between">
+        <h2 class="card-title">{{title}}</h2>
+        <p class="card-content">{{format_date createdAt}}</p>
+    </div>
+</div>
+{{else}}
 <div class="card">
     <div class="card-header flex-row justify-space-between">
         <a href="/post/{{id}}" class="card-link">
@@ -9,3 +17,4 @@
         <p class="card-content">{{body}}</p>
     </div>
 </div>
+{{/if}}

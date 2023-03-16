@@ -1,15 +1,24 @@
 <div class="card form-card hidden">
-    <h3 class="card-header text-uppercase">Create New Post</h3>
+    <h3 class="card-header text-uppercase">{{title}} Post</h3>
     <form class="form card-body">
         <label for="post-title">Title</label>
         <input class="form-input" type="text" id="post-title" autofocus="true" />
         <label for="post-body">Content</label>
         <textarea class="form-input" id="post-body"></textarea>
         <button
-        id="submit-form"
-        class="btn btn-primary"
-        type="submit"
-        data-userid="{{user_id}}">
-        Create</button>
+        id="submit-form" class="btn btn-primary"
+        type="submit" data-userid="{{user_id}}">
+        {{#if edit}}
+        Update Post
+        {{else}}
+        Create
+        {{/if}}
+        </button>
+        {{#if edit}}
+        <button
+        id="delete-form" class="btn btn-primary"
+        type="" data-postid="{{id}}">
+        Delete</button>
+        {{/if}}
     </form>
 </div>

@@ -1,9 +1,10 @@
 <div class="container toggle-container">
     {{#each posts}}
-    {{> post-details-dashboard}}
+    {{> post-details dashboard=true}}
     {{/each}}
 </div>
-{{> post-form user_id=currentUserId}}
+{{> post-form user_id=currentUserId title="Create New"}}
+{{> post-form user_id=currentUserId title="Edit" edit=true}}
 <div class="footer">
     <button class="btn" id="footer-btn"> + Add Post </button>
 </div>

@@ -179,11 +179,7 @@ nav a{
   cursor: not-allowed;
 }
 
-.container{
-  width: 100%;
-}
-
-.comment-container{
+.container, .comment-container, .toggle-container {
   width: 100%;
 }
 

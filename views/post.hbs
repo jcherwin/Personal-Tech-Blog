@@ -4,13 +4,15 @@
     {{> post-details}}
 </div>
 
+<div class="toggle-container">
 {{#if comments}}
-<div class="comment-container toggle-container">
+<div class="comment-container">
     {{#each comments}}
     {{> comment-details}}
     {{/each}}
 </div>
 {{/if}}
+</div>
 
 {{> comment-form user_id=../currentUserId}}
 
