@@ -10,7 +10,7 @@ This program utilizes node.js as well as the npm packages 'express' for handling
 
 Here is a link to the deployed application being hosted on: [Heroku](https://dry-earth-97574.herokuapp.com/)
 
-Here is an external link to a video demonstrating how the program should run: [Google Drive]()
+Here is an example screenshot showing what the application should look like: ![This is an image of the application](/assets/images/demo-screenshot.png)
 
 ## Installation
 
